@@ -8,7 +8,9 @@
         "basket.api": "StartDebugging",
         "discount.grpc": "StartDebugging",
         "ordering.api": "StartDebugging",
-        "oceletapigw": "StartDebugging"
+        "oceletapigw": "StartDebugging",
+        "shopping.aggregator": "StartDebugging",
+        "aspnetrunbasics": "StartDebugging"
       }
     }
   }
