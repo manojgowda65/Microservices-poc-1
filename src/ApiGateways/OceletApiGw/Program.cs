@@ -2,7 +2,12 @@ using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
- builder.Host.ConfigureLogging((hostingCtxt, loggingBuilder) =>
+
+builder.Host.ConfigureAppConfiguration((hostCtxt, cfg) =>
+{
+    cfg.AddJsonFile($"Ocelot.{hostCtxt.HostingEnvironment.EnvironmentName}.json",true,true);
+
+}).ConfigureLogging((hostingCtxt, loggingBuilder) =>
             {
                loggingBuilder.AddConfiguration(hostingCtxt.Configuration.GetSection("Logging"));
                 loggingBuilder.AddConsole();
